@@ -4,7 +4,7 @@ import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center gap-4 my-16 dark:bg-card px-5 lg:px-0">
+    <div className="flex flex-col items-center gap-4 my-16 dark:bg-card ">
       <h2 className="text-3xl font-semibold text-primary">
       
         About<span>Us</span>

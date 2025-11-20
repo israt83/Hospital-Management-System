@@ -12,7 +12,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import { Filter } from "lucide-react";
+import { Filter, Loader2 } from "lucide-react";
 
 const Doctors = () => {
   const navigate = useNavigate();
@@ -30,14 +30,18 @@ const Doctors = () => {
     "Neurologist",
     "Gastroenterologist",
   ];
-
-  useEffect(() => {
+  const applyFilter = () => {
     if (speciality) {
-      setFilteredDoc(doctors.filter((doc) => doc.speciality === speciality));
+      setFilteredDoc(doctors.filter((item) => item.speciality === speciality));
     } else {
       setFilteredDoc(doctors);
     }
+  };
+
+  useEffect(() => {
+    applyFilter();
   }, [doctors, speciality]);
+
 
   const handleCategoryClick = (cat) => {
     setModalOpen(false);
@@ -48,6 +52,8 @@ const Doctors = () => {
     }
   };
 
+  const loading = !doctors || doctors.length === 0;
+
   return (
     <div className="py-10 px-4 md:px-8">
       {/* Header */}
@@ -57,7 +63,7 @@ const Doctors = () => {
         </p>
 
         {/* Mobile Filter Icon */}
-        <div className="md:hidden ">
+        <div className="md:hidden">
           <Dialog open={modalOpen} onOpenChange={setModalOpen}>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-2 py-3">
@@ -98,7 +104,6 @@ const Doctors = () => {
         </div>
       </div>
 
-
       <div className="flex flex-col sm:flex-row items-start gap-8">
         {/* Desktop Categories */}
         <div className="hidden md:flex flex-col gap-4 text-sm w-[200px]">
@@ -120,9 +125,17 @@ const Doctors = () => {
 
         {/* Doctor Cards */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {filteredDoc.map((item, idx) => (
-            <DoctorCard key={idx} item={item} />
-          ))}
+          {loading ? (
+            <div className="col-span-full flex justify-center items-center py-20">
+              <Loader2 className="w-10 h-10 animate-spin text-primary" />
+            </div>
+          ) : filteredDoc.length === 0 ? (
+            <div className="col-span-full text-center py-20 text-gray-400 font-semibold">
+              No doctors available in this category
+            </div>
+          ) : (
+            filteredDoc.map((item, idx) => <DoctorCard key={idx} item={item} />)
+          )}
         </div>
       </div>
     </div>
