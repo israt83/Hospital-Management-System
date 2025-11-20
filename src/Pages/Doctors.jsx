@@ -55,7 +55,7 @@ const Doctors = () => {
   const loading = !doctors || doctors.length === 0;
 
   return (
-    <div className="py-10 px-4 md:px-8">
+    <div className="py-10 px-4 md:px-8 mt-16">
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <p className="text-lg font-medium flex items-center gap-2">
