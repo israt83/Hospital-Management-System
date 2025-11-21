@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="py-6 dark:bg-gray-100 dark:text-gray-800">
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
+  
           <div className="flex flex-col space-y-4">
             <h2 className="text-3xl font-bold text-primary">Medi<span className="text-secondary">Connect</span></h2>
             <p className="text-sm text-muted-foreground">
@@ -13,7 +13,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Core Concepts */}
+ 
           <div className="flex flex-col space-y-4">
             <h3 className="font-semibold">Core Concepts</h3>
             <div className="flex flex-col space-y-2 text-sm text-muted-foreground">
@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Customization */}
+     
           <div className="flex flex-col space-y-4">
             <h3 className="font-semibold">Customization</h3>
             <div className="flex flex-col space-y-2 text-sm text-muted-foreground">
@@ -35,7 +35,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Community */}
+
           <div className="flex flex-col space-y-4">
             <h3 className="font-semibold">Community</h3>
             <div className="flex flex-col space-y-2 text-sm text-muted-foreground">
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
+
         <div className="mt-10 border-t border-border pt-4 text-center text-sm text-muted-foreground">
           © Copyright 2025. All Rights Reserved.
         </div>

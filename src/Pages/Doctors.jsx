@@ -56,13 +56,13 @@ const Doctors = () => {
 
   return (
     <div className="py-10 px-4 md:px-8 mt-16">
-      {/* Header */}
+
       <div className="flex items-center justify-between mb-5">
         <p className="text-lg font-medium flex items-center gap-2">
           Browse through the doctors specialist
         </p>
 
-        {/* Mobile Filter Icon */}
+
         <div className="md:hidden">
           <Dialog open={modalOpen} onOpenChange={setModalOpen}>
             <DialogTrigger asChild>
@@ -105,7 +105,7 @@ const Doctors = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row items-start gap-8">
-        {/* Desktop Categories */}
+
         <div className="hidden md:flex flex-col gap-4 text-sm w-[200px]">
           {categories.map((cat, idx) => (
             <p
@@ -123,7 +123,6 @@ const Doctors = () => {
           ))}
         </div>
 
-        {/* Doctor Cards */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {loading ? (
             <div className="col-span-full flex justify-center items-center py-20">

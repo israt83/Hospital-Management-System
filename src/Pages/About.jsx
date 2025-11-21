@@ -40,7 +40,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Why Choose Us */}
+
       <div className="max-w-7xl mx-auto mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
           Why <span className="text-primary">Choose Us</span>

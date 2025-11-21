@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true); // navbar visibility
+  const [showNavbar, setShowNavbar] = useState(true); 
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems = [
@@ -21,15 +21,15 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  // Scroll listener
+
   useEffect(() => {
     const handleScroll = () => {
       if (typeof window !== "undefined") {
         if (window.scrollY > lastScrollY && window.scrollY > 50) {
-          // scrolling down
+  
           setShowNavbar(false);
         } else {
-          // scrolling up
+        
           setShowNavbar(true);
         }
         setLastScrollY(window.scrollY);
@@ -85,7 +85,7 @@ const Navbar = () => {
           Create Account
         </Button>
 
-        {/* Mobile Menu Icon */}
+  
         <div className="md:hidden">
           <button onClick={() => setIsOpen(true)}>
             <Menu className="w-6 h-6 text-gray-100" />
